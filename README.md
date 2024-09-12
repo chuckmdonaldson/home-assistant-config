@@ -23,3 +23,7 @@ Coming soon...
 ## Network
 
 Coming soon...
+
+## Author
+
+The original setup of this repository is by [Chuck Donaldson](https://github.com/chuckmdonaldson)
