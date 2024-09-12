@@ -1,0 +1,193 @@
+sleep: 
+  sequence:
+    - service: light.turn_off
+      target:
+        entity_id: light.chuck_bedroom
+    - service: light.turn_off
+      target:
+        entity_id: light.chuck_fan
+    - service: light.turn_off
+      target:
+        entity_id: light.chuck_bathroom
+    - service: light.turn_off
+      target:
+        entity_id: light.chuck_shower
+    - service: light.turn_off
+      target:
+        entity_id: light.chuck_closet
+    - service: switch.turn_off
+      target:
+        entity_id: switch.speakers
+    - service: switch.turn_off
+      target:
+        entity_id: switch.salt_rock
+    - service: switch.turn_off
+      target:
+        entity_id: switch.printer
+    - service: switch.turn_off
+      target:
+        entity_id: switch.dell_monitor
+    - service: script.turn_on
+      target:
+        entity_id: script.samsung_monitor_power_toggle
+    - delay:
+        minutes: "{{ states('input_number.sleep_slider') }}"
+    - service: switch.turn_off
+      target:
+        entity_id: switch.tv
+
+wake:
+  sequence:
+    - service: light.turn_off
+      target:
+        entity_id: light.fan
+
+tv_power: 
+  sequence:
+    - service: switch.turn_on
+      target:
+        entity_id: switch.tv
+    - service: script.turn_on
+      target:
+        entity_id: script.phillips_tv_power_toggle
+    - service: script.turn_on
+      target:
+        entity_id: script.pioneer_receiver_power_toggle
+
+light_effect:
+  alias: "Light Effect"
+  sequence:
+    - service: light.turn_on
+      target: 
+        entity_id: light.{{ states('input_select.light_group') }}
+      data:
+        effect: "{{ states('input_select.light_effect') }}"
+
+#-----------------
+# SAMSUNG MONITOR 
+#-----------------
+samsung_monitor_power_toggle:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.broadlink_remote
+      data:
+        device: monitor_samsung
+        command:
+          - power_toggle
+
+samsung_monitor_input:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.broadlink_remote
+      data:
+        device: monitor_samsung
+        command:
+          - input
+
+samsung_monitor_picture:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.broadlink_remote
+      data:
+          device: monitor_samsung
+          command:
+            - picture
+
+#-------------
+# Phillips TV
+#-------------
+phillips_tv_power_toggle:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.broadlink_remote
+      data:
+        device: phillips_tv
+        command:
+          - power_toggle
+
+phillips_tv_sleep:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.broadlink_remote
+      data:
+        device: phillips_tv
+        command:
+          - sleep
+
+#------------------
+# PIONEER RECEIVER
+#------------------
+pioneer_receiver_power_toggle:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.broadlink_remote
+      data:
+        device: pioneer_receiver
+        command:
+          - power_toggle
+
+pioneer_receiver_sleep:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.broadlink_remote
+      data:
+        device: pioneer_receiver
+        command:
+          - sleep
+
+pioneer_receiver_tuner:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.broadlink_remote
+      data:
+        device: pioneer_receiver
+        command:
+          - tuner
+
+pioneer_receiver_sat_cbl:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.broadlink_remote
+      data:
+        device: pioneer_receiver
+        command:
+          - sat_cbl
+
+pioneer_receiver_volume_up:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.broadlink_remote
+      data:
+        device: pioneer_receiver
+        command:
+          - volume_up
+
+pioneer_receiver_volume_down:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.broadlink_remote
+      data:
+        device: pioneer_receiver
+        command:
+          - volume_down
+
+pioneer_receiver_mute:
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.broadlink_remote
+      data:
+        device: pioneer_receiver
+        command:
+          - mute

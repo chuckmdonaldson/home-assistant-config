@@ -1,0 +1,7 @@
+sleep_slider:
+  name: Sleep
+  initial: 90
+  min: 5
+  max: 90
+  step: 5
+  icon: mdi:sleep

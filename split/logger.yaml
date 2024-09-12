@@ -1,0 +1,29 @@
+default: error
+#logs:
+  #----------------------------------
+  # Home Assistant Core Integrations
+  #----------------------------------
+  # homeassistant.components.apple_tv: debug
+  # homeassistant.components.automation: debug
+  # homeassistant.components.light: debug
+  # homeassistant.components.mqtt: debug
+  # homeassistant.components.mqtt.light: debug
+  # homeassistant.components.mqtt.light.schema_json: debug
+  # homeassistant.components.script: debug
+  # homeassistant.components.scene: debug
+  # homeassistant.components.sensor: debug
+  # homeassistant.components.upnp: debug
+  # homeassistant.components.smart_meter_texas: debug
+
+  #------------------------
+  # Home Assistant Helpers
+  #------------------------
+  # homeassistant.helpers.frame: debug
+  # homeassistant.helpers.template: debug
+
+  #-------------------
+  # HACS Integrations
+  #-------------------
+  # custom_components.nodered: debug
+  # custom_components.wyzeapi: debug
+  # wyzeapy: debug

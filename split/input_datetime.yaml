@@ -1,0 +1,17 @@
+ethan_alarm_time:
+  name: Alarm Time Ethan
+  has_date: false
+  has_time: true
+chuck_alarm_time:
+  name: Alarm Time Chuck
+  has_date: false
+  has_time: true
+chuck_vanity_last_movement:
+  name: Last Movement Vanity
+  has_time: true
+chuck_closet_last_movement:
+  name: Last Movement Closet
+  has_time: true
+chuck_shower_last_movement:
+  name: Last Movement Shower
+  has_time: true

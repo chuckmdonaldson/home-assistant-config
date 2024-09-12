@@ -1,0 +1,6 @@
+title: Home
+views:
+  - !include /config/lovelace/views/chuck.yaml
+  - !include /config/lovelace/views/ethan.yaml
+  - !include /config/lovelace/views/maddie.yaml
+  - !include /config/lovelace/views/taylor.yaml

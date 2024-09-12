@@ -1,0 +1,12 @@
+enable_motion_detection:
+  name: Motion
+  icon: mdi:motion-sensor
+  initial: on
+chuck_alarm_enabled:
+  name: Alarm Enabled Chuck
+  icon: mdi:alarm
+  initial: on
+ethan_alarm_enabled:
+  name: Alarm Enabled Ethan
+  icon: mdi:alarm
+  initial: on

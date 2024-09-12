@@ -1,0 +1,62 @@
+'1':
+  friendly_name: chuck_fan
+  transition: 2
+  devices:
+    - 0x001788010255fa4c/11
+    - 0x0017880102ddc38e/11
+    - 0x00178801024c6687/11
+'2':
+  friendly_name: chuck_bedroom
+  transition: 2
+  devices:
+    - 0x001788010ce1e728/11
+    - 0x001788010bbeb6ea/11
+    - 0x001788010bbeb06c/11
+    - 0x001788010cdf3a07/11
+'3':
+  friendly_name: bedside
+  transition: 2
+  devices: []
+'4':
+  friendly_name: taylor_fan
+  transition: 2
+  devices:
+    - taylor_fan1/11
+    - taylor_fan2/11
+    - taylor_fan3/11
+'5':
+  friendly_name: chuck_bathroom
+  transition: 2
+  devices:
+    - 0x001788010952dee4/11
+    - 0x00178801094d58f2/11
+    - 0x0017880103bcd182/11
+    - 0x001788010ce3ffc1/11
+'6':
+  friendly_name: ethan_fan
+  transition: 2
+  devices:
+    - ethan_fan1/11
+    - ethan_fan1/11
+    - ethan_fan1/11
+    - 0x001788010883ca8d/11
+    - 0x0017880106ef9d2d/11
+'7':
+  friendly_name: living
+  transition: 2
+  devices:
+    - living_elfa/11
+    - living_lamp/11
+'8':
+  friendly_name: maddie_fan
+  transition: 2
+  devices:
+    - maddie_fan1/11
+    - maddie_fan2/11
+    - maddie_fan3/11
+'9':
+  friendly_name: entry
+  transition: 2
+  devices:
+    - entry1/11
+    - entry2/11

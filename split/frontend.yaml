@@ -1,0 +1,5 @@
+themes:
+  thermostat-theme:
+    st-toggle-label-color: white
+extra_module_url:
+  - /hacsfiles/lovelace-card-mod/card-mod.js 

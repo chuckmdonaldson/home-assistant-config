@@ -1,0 +1,352 @@
+
+- title: Media Players
+  icon: mdi:cast
+  theme: dark-mode
+  visible:
+    - user: 3e317e6bc2a24cb8b227925691c5c820
+  cards:
+    - type: vertical-stack
+      cards:
+        - type: media-control
+          entity: media_player.apple_tv_4g
+        - type: custom:mini-media-player
+          entity: media_player.chuck_echo_bathroom
+        - type: custom:mini-media-player
+          entity: media_player.chuck_echo_bedroom
+        - type: custom:mini-media-player
+          entity: media_player.macbook_pro
+        - type: media-control
+          entity: media_player.alexa_everywhere
+        - type: custom:mini-media-player
+          entity: media_player.philips_tv
+    - type: vertical-stack
+      cards:
+      - type: custom:mini-media-player
+        entity: media_player.smart_tv
+      - type: custom:mini-media-player
+        entity: media_player.maddie_echo_dot
+      - type: custom:mini-media-player
+        entity: media_player.maddie_s_roku
+    - type: vertical-stack
+      cards:
+      - type: custom:mini-media-player
+        entity: media_player.android_smart_tv
+      - type: custom:mini-media-player
+        entity: media_player.google_cast
+      - type: custom:mini-media-player
+        entity: media_player.xbox
+- type: sections
+  title: Phones
+  icon: mdi:cellphone
+  max_columns: 4
+  theme: dark-mode
+  visible:
+    - user: 3e317e6bc2a24cb8b227925691c5c820
+  sections:
+    - type: grid
+      cards:
+        - type: entities
+          show_header_toggle: false
+          entities:
+            - type: custom:auto-entities
+              card: 
+                type: entities
+                title: Chuck
+              filter:
+                include: 
+                  - entity_id: "*iphone_chuck*"
+              sort:
+                method: entity_id
+    - type: grid
+      cards:
+        - type: entities
+          show_header_toggle: false
+          entities:      
+            - type: custom:auto-entities
+              card: 
+                type: entities
+                title: Ethan
+              filter:
+                include: 
+                  - entity_id: "*iphone_ethan*"
+              sort:
+                method: entity_id
+    - type: grid
+      cards:
+        - type: entities
+          show_header_toggle: false
+          entities: 
+            - type: custom:auto-entities
+              card: 
+                type: entities
+                title: Maddie
+              filter:
+                include: 
+                  - entity_id: "*iphone_maddie*"
+              sort:
+                method: entity_id
+    - type: grid
+      cards:
+        - type: entities
+          show_header_toggle: false
+          entities: 
+            - type: custom:auto-entities
+              card: 
+                type: entities
+                title: Taylor
+              filter:
+                include: 
+                  - entity_id: "*iphone_taylor*"
+              sort:
+                method: entity_id
+- title: Lights
+  theme: dark-mode
+  visible:
+    - user: 3e317e6bc2a24cb8b227925691c5c820
+  cards:
+    - type: custom:auto-entities
+      card: 
+        type: entities
+        title: Light Power
+      filter:
+        include:
+          - domain: light
+    - type: custom:auto-entities
+      card:
+        type: entities
+        title: Light Power-On Behavior
+      filter:
+        include:
+          - entity_id: "select.*power_on_behavior"
+    - type: custom:auto-entities
+      card: 
+        type: entities
+        title: Light Effect
+      filter:
+        include:
+          - entity_id: "select.*effect"
+    - type: custom:auto-entities
+      card: 
+        type: entities
+        title: zigbee2mqtt
+      filter:
+        include:
+          - entity_id: "select.zigbee2mqtt_bridge_log_level"
+          - entity_id: "switch.zigbee2mqtt_bridge_permit_join"
+          - entity_id: "select.maddie_s_roku_application"
+          - entity_id: "switch.wyze_notifications"
+- title: Motion
+  theme: dark-mode
+  visible:
+    - user: 3e317e6bc2a24cb8b227925691c5c820
+  cards:
+    - type: custom:auto-entities
+      card: 
+        type: entities
+        title: LED Indication
+        toggle: false
+      filter:
+        include:
+          - entity_id: "switch.*motion_led*"
+    - type: custom:auto-entities
+      card: 
+        type: entities
+        title: Motion Sensitivity
+        toggle: false
+      filter:
+        include:
+          - entity_id: "select.*motion_sensitivity"
+    - type: custom:auto-entities
+      card: 
+        type: entities
+        title: Illuminance
+        toggle: false
+      filter:
+        include:
+          - entity_id: "sensor.*illuminance"
+    - type: custom:auto-entities
+      card: 
+        type: entities
+        title: Illuminance Lux
+        toggle: false
+      filter:
+        include:
+          - entity_id: "sensor.*illuminance_lux"
+    - type: custom:auto-entities
+      card: 
+        type: entities
+        title: Temperature
+        toggle: false
+      filter:
+        include:
+          - entity_id: "sensor.*motion_temperature"
+    - type: custom:auto-entities
+      card: 
+        type: entities
+        title: Occupancy
+        toggle: false
+      filter:
+        include:
+          - entity_id: "binary_sensor.*occupancy"
+    - type: custom:auto-entities
+      card: 
+        type: entities
+        title: Occupancy Timeout
+        toggle: false
+      filter:
+        include:
+          - entity_id: "number.*occupancy_timeout"
+    - type: custom:auto-entities
+      card: 
+        type: entities
+        title: Battery
+        toggle: false
+      filter:
+        include:
+          - entity_id: "sensor.*motion_battery"
+    - type: custom:auto-entities
+      card: 
+        type: entities
+        title: Link Quality
+        toggle: false
+      filter:
+        include:
+          - entity_id: "sensor.*motion_linkquality"
+- title: Status
+  theme: dark-mode
+  visible:
+    - user: 3e317e6bc2a24cb8b227925691c5c820
+  cards:
+    - type: custom:auto-entities
+      card: 
+        type: entities
+        title: HASS
+      filter:
+        include:
+          - domain: binary_sensor
+            area: HASS
+    - type: custom:auto-entities
+      card: 
+        type: entities
+        title: Backups
+      filter:
+        include:
+          - entity_id: "binary_sensor.backups_stale"
+    - type: custom:auto-entities
+      card: 
+        type: entities
+        title: zigbee2mqtt
+      filter:
+        include:
+          - entity_id: "*.zigbee2mqtt*"
+    - type: custom:auto-entities
+      card: 
+        type: entities
+        title: Occupancy
+      filter:
+        include:
+          - entity_id: "binary_sensor.printer_cloud_connection"
+          - entity_id: "binary_sensor.router_wan_status"
+- title: Binary
+  path: binary
+  theme: dark-mode
+  visible:
+    - user: 3e317e6bc2a24cb8b227925691c5c820
+  cards:
+    - type: custom:auto-entities
+      card: 
+        type: entities
+        title: Binary Sensors
+      filter:
+        include: 
+          - domain: binary_sensor
+- title: Trackers
+  path: trackers
+  theme: dark-mode
+  visible:
+    - user: 3e317e6bc2a24cb8b227925691c5c820
+  cards:
+    - type: custom:auto-entities
+      card: 
+        type: entities
+        title: Device Trackers
+      filter:
+        include: 
+          - domain: device_tracker
+- title: Inputs
+  path: inputs
+  theme: dark-mode
+  visible:
+    - user: 3e317e6bc2a24cb8b227925691c5c820
+  cards:
+    - type: custom:auto-entities
+      card: 
+        type: entities
+        title: Inputs
+      filter:
+        include: 
+          - entity_id: "input*"
+- title: Sensors
+  theme: dark-mode
+  visible:
+    - user: 3e317e6bc2a24cb8b227925691c5c820
+  cards:
+    - type: custom:auto-entities
+      card: 
+        type: entities
+        title: Sensors
+      filter:
+        include: 
+          - domain: sensor
+- title: Misc
+  theme: dark-mode
+  visible:
+    - user: 3e317e6bc2a24cb8b227925691c5c820
+  cards:
+    - type: custom:auto-entities
+      card: 
+        type: entities
+      filter:
+        include:
+          - domain: button
+          - domain: calendar
+          - domain: conversation
+          - domain: number
+          - domain: person
+          - domain: remote
+          - domain: stt
+          - domain: sun
+          - domain: tts
+          - domain: weather
+          - domain: zone
+- title: Zigbee
+  path: zigbee2mqtt
+  theme: dark-mode
+  panel: true # this renders the first card on full width, other cards in this view will not be rendered
+  visible:
+    - user: 3e317e6bc2a24cb8b227925691c5c820
+  cards:
+    - type: custom:zigbee2mqtt-networkmap
+      entity: sensor.zigbee2mqtt_networkmap
+      # the following are optional:
+      mqtt_base_topic: zigbee2mqtt # if you change base_topic of Zigbee2mqtt, change it accordingly
+      force: 3000 # decrease it to get smaller map if you have many devices
+      node_size: 16
+      font_size: 12
+      link_width: 2
+      height: 400 # height of the card
+      # use this css config or use whatever css tech to change look and feel,
+      # the same variable can also be used in Home Assistant themes, see https://www.home-assistant.io/components/frontend/#defining-themes
+      css: |
+        :host {
+          --zigbee2mqtt-networkmap-node-color: rgba(18, 120, 98, .7);
+          --zigbee2mqtt-networkmap-node-fill-color: #dcfaf3;
+          --zigbee2mqtt-networkmap-node-pinned-color: rgba(190, 56, 93, .6);
+          --zigbee2mqtt-networkmap-link-color: rgba(18, 120, 98, .5);
+          --zigbee2mqtt-networkmap-hover-color: #be385d;
+          --zigbee2mqtt-networkmap-link-selected-color: rgba(202, 164, 85, .6);
+          --zigbee2mqtt-networkmap-label-color: #127862;
+          --zigbee2mqtt-networkmap-arrow-color: rgba(18, 120, 98, 0.7);
+          --zigbee2mqtt-networkmap-node-coordinator-color: rgba(224, 78, 93, .7);
+          --zigbee2mqtt-networkmap-node-router-color: rgba(0, 165, 255, .7);
+        }

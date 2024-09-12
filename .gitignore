@@ -1,0 +1,32 @@
+# Config Folders
+.cloud
+.git
+.ssh
+.storage
+.vscode
+blueprints
+custom_components
+deps
+downloads
+tts
+www
+
+# Config Files to ignore
+*.db
+*.db-shm
+*.db-wal
+*.log
+*.log.*
+secrets.yaml
+
+# zigbee2mqtt
+log
+state.json
+
+# AppDaemon
+compiled
+dashboards
+namespaces
+
+# Node-RED
+flow_creds.json

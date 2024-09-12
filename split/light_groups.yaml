@@ -1,0 +1,46 @@
+- name: chuck_group
+  platform: group
+  entities:
+    - light.chuck_bathroom1
+    - light.chuck_bathroom2
+    - light.chuck_bathroom3
+    - light.chuck_bathroom4
+    - light.chuck_closet
+    - light.chuck_shower
+    - light.chuck_bedroom_chair
+    - light.chuck_bedroom_desk
+    - light.chuck_bedroom_nightstand
+    - light.chuck_bedroom_shelf
+- name: chuck_bathroom_group
+  platform: group
+  entities:
+    - light.chuck_bathroom1
+    - light.chuck_bathroom2
+    - light.chuck_bathroom3
+    - light.chuck_bathroom4
+- name: chuck_bedroom_group
+  platform: group
+  entities:
+    - light.chuck_bedroom_chair
+    - light.chuck_bedroom_desk
+    - light.chuck_bedroom_nightstand
+    - light.chuck_bedroom_shelf
+- name: ethan_group
+  platform: group
+  entities:
+    - light.ethan_fan1
+    - light.ethan_fan2
+    - light.ethan_fan3
+- name: maddie_group
+  platform: group
+  entities:
+    - light.maddie_fan1
+    - light.maddie_fan2
+    - light.maddie_fan3
+    - light.maddie_lamp
+- name: taylor_group
+  platform: group
+  entities:
+    - light.taylor_fan1
+    - light.taylor_fan2
+    - light.taylor_fan3

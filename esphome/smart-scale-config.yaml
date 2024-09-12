@@ -1,0 +1,59 @@
+esphome:
+  name: smart-scale-config
+  friendly_name: Smart Scale Config
+
+esp32:
+  board: esp32dev
+  framework:
+    type: arduino
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: !secret ../api_encryption_key
+
+ota:
+  - platform: esphome
+    password: !secret ../ota_password
+
+wifi:
+  ssid: !secret ../wifi_ssid
+  password: !secret ../wifi_password
+  fast_connect: true
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Smart-Scale-Config"
+    password: !secret ../ap_smart_scale_config_password
+
+  manual_ip:
+    static_ip: 192.168.0.234
+    gateway: 192.168.0.1
+    subnet: 255.255.255.0
+
+captive_portal:
+
+esp32_ble_tracker:
+
+#sensor:
+#  - platform: xiaomi_miscale
+#    mac_address: '70:87:9E:6D:6F:77'
+#    weight:
+#      id: "scale_weight"
+#      name: "Chuck Weight"
+#      icon: mdi:scale-bathroom
+#      accuracy_decimals: 2
+#      on_value:
+#        then:
+#          - lambda: |-
+#              const float bmi_factor = 0.29860551;
+#              return id(miscale_bmi).publish_state(x * bmi_factor);
+#  - platform: template
+#    id: "miscale_bmi"
+#    name: "Chuck BMI"
+#    icon: mdi:human-pregnant
+#    unit_of_measurement: ""
+#    accuracy_decimals: 1

@@ -1,0 +1,23 @@
+# effects: blink, breathe, okay, channel_change, finish_effect, stop_effect
+# hue_effects: candle, fireplace, colorloop, stop_hue_effect
+light_effect:
+  name: Light Effect
+  options:
+    - colorloop
+    - fireplace
+    - stop_hue_effect   
+    - blink
+    - breathe
+    - okay
+    - candle
+    - finish_effect
+    - stop_effect
+  icon: mdi:lightbulb-variant-outline
+light_group:
+  name: Light Group
+  options:
+    - chuck_group
+    - chuck_bathroom_group
+    - chuck_bedroom_group
+  initial: chuck_bedroom_group
+  icon: mdi:lightbulb-variant-outline

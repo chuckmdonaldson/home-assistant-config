@@ -1,0 +1,29 @@
+default_config:
+
+homeassistant:
+  customize_glob:
+    sensor.smt*:
+      last_reset: '1970-01-01T00:00:00+00:00'
+      device_class: energy
+      state_class: total_increasing
+      unit_of_measurement: kWh
+
+lovelace:
+  mode: yaml
+  resources: !include lovelace/resources.yaml
+
+scene:          !include scenes.yaml
+
+frontend:       !include split/frontend.yaml
+http:           !include split/http.yaml
+input_boolean:  !include split/input_boolean.yaml
+input_datetime: !include split/input_datetime.yaml
+input_number:   !include split/input_number.yaml
+input_select:   !include split/input_select.yaml
+light groups:   !include split/light_groups.yaml
+logger:         !include split/logger.yaml
+mqtt:           !include split/mqtt.yaml
+script:         !include split/scripts.yaml
+template:       !include split/templates.yaml
+tts:            !include split/tts.yaml
+utility_meter:  !include split/utility_meter.yaml

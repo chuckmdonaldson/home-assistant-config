@@ -1,0 +1,215 @@
+-title: Maddie
+icon: mdi:alpha-m-box
+path: maddie
+theme: dark-mode
+visible:
+  - user: e05d7bce07ed42bc8c17e41d171bf86a
+  - user: 3e317e6bc2a24cb8b227925691c5c820
+cards:
+  - type: vertical-stack
+    cards:
+      - type: entities
+        show_header_toggle: false
+        entities:
+          - type: custom:multiple-entity-row
+            entity: light.maddie_lamp
+            name: Lights
+            show_state: true
+            state_color: true
+            state_header: Lamp
+            toggle: true
+            entities:
+              - icon: mdi:weather-sunny
+                name: Day
+                show_state: true
+                state_color: true
+                tap_action:
+                  action: call-service
+                  service: scene.turn_on
+                  service_data:
+                    entity_id: scene.maddie_day
+              - icon: mdi:weather-night
+                name: Night
+                show_state: true
+                state_color: true
+                tap_action:
+                  action: call-service
+                  service: scene.turn_on
+                  service_data:
+                    entity_id: scene.maddie_night
+          - type: custom:multiple-entity-row
+            entity: light.maddie_fan
+            name: Fan Lights
+            show_state: true
+            state_color: true
+            state_header: Fan
+            toggle: true
+            entities:
+              - entity: light.maddie_fan1
+                name: Fan1
+                state_color: true
+                toggle: true
+              - entity: light.maddie_fan2
+                name: Fan2
+                state_color: true
+                toggle: true
+              - entity: light.maddie_fan3
+                name: Fan3
+                state_color: true
+                toggle: true
+          - type: custom:multiple-entity-row
+            entity: light.living
+            name: Living
+            show_state: true
+            state_color: true
+            state_header: Living
+            toggle: true
+            entities:
+              - icon: mdi:weather-sunny
+                name: Living
+                show_state: true
+                state_color: true
+                tap_action:
+                  action: call-service
+                  service: scene.turn_on
+                  service_data:
+                    entity_id: scene.living_day
+              - icon: mdi:weather-night
+                name: Living
+                show_state: true
+                state_color: true
+                tap_action:
+                  action: call-service
+                  service: scene.turn_on
+                  service_data:
+                    entity_id: scene.living_night
+          - type: custom:multiple-entity-row
+            entity: light.patio
+            name: Outdoor
+            show_state: true
+            state_color: true
+            state_header: Patio
+            toggle: true
+            entities:
+              - icon: mdi:weather-sunny
+                name: Patio
+                show_state: true
+                state_color: true
+                tap_action:
+                  action: call-service
+                  service: scene.turn_on
+                  service_data:
+                    entity_id: scene.patio_day
+              - icon: mdi:weather-night
+                name: Patio
+                show_state: true
+                state_color: true
+                tap_action:
+                  action: call-service
+                  service: scene.turn_on
+                  service_data:
+                    entity_id: scene.patio_night
+              - entity: light.porch
+                name: Porch
+                state_color: true
+                toggle: true
+      - type: grid
+        columns: 3
+        cards:
+          - type: gauge
+            entity: sensor.router_kib_s_received
+            name: Download
+            min: 0
+            max: 10000
+          - type: gauge
+            entity: sensor.router_kib_s_sent
+            name: Upload
+            min: 0
+            max: 10000
+          - type: tile
+            entity: sensor.router_wan_status
+            name: Internet
+            color: green
+            vertical: true
+          - type: gauge
+            entity: sensor.speedtest_download
+            name: Download
+            min: 0
+            max: 1000
+            severity:
+              green: 100
+              yellow: 50
+              red: 0
+          - type: gauge
+            entity: sensor.speedtest_upload
+            name: Upload
+            min: 0
+            max: 100
+            severity:
+              green: 20
+              yellow: 10
+              red: 0
+          - type: gauge
+            entity: sensor.speedtest_ping
+            name: Ping
+            min: 0
+            max: 100
+            severity:
+              green: 0
+              yellow: 30
+              red: 50
+  - type: vertical-stack
+    cards:
+      - type: grid
+        columns: 3
+        cards:
+          - type: custom:mini-graph-card
+            name: Bedroom
+            decimals: 1
+            font_size: 60
+            color_thresholds:
+              - value: 0
+                color: "#0000FF"
+              - value: 73
+                color: "#8b00ff"
+              - value: 75
+                color: "#ff0000"
+            entities:
+              - entity: sensor.broadlink_temperature
+                show_state: true
+                state_adaptive_color: true
+          - type: custom:mini-graph-card
+            name: Bedroom
+            decimals: 1
+            font_size: 60
+            color_thresholds:
+              - value: 0
+                color: "#0000FF"
+              - value: 73
+                color: "#8b00ff"
+              - value: 75
+                color: "#ff0000"
+            entities:
+              - entity: sensor.broadlink_humidity
+                show_state: true
+                state_adaptive_color: true
+          - type: custom:mini-graph-card
+            name: Bathroom
+            decimals: 1
+            font_size: 60
+            color_thresholds:
+              - value: 0
+                color: "#0000FF"
+              - value: 73
+                color: "#8b00ff"
+              - value: 75
+                color: "#ff0000"
+            entities:
+              - entity: sensor.chuck_bathroom_motion_temperature
+                show_state: true
+                state_adaptive_color: true
+      - type: weather-forecast
+        entity: weather.home
+        forecast_type: daily
+      - entity: media_player.maddie_s_roku
+        type: media-control
