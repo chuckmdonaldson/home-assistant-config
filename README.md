@@ -14,7 +14,7 @@ Coming soon...
 
 ## Add-Ons
 
-[AppDaemon](https://github.com/chuckmdonaldson/hass-appdaemon-config)
+[AppDaemon Configuration](https://github.com/chuckmdonaldson/hass-appdaemon-config)
 
 ## Community Add-Ons
 
