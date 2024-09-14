@@ -1,0 +1,145 @@
+- type: entities
+  show_header_toggle: false
+  entities:
+    - type: custom:multiple-entity-row
+      entity: light.living_lamp
+      name: Living
+      show_state: true
+      state_color: true
+      state_header: Living
+      toggle: true
+      entities:
+        - icon: mdi:weather-sunny
+          name: Living
+          show_state: true
+          state_color: true
+          tap_action:
+            action: call-service
+            service: scene.turn_on
+            service_data:
+              entity_id: scene.living_day
+        - icon: mdi:weather-night
+          name: Living
+          show_state: true
+          state_color: true
+          tap_action:
+            action: call-service
+            service: scene.turn_on
+            service_data:
+              entity_id: scene.living_night
+    - type: custom:multiple-entity-row
+      entity: light.patio
+      name: Outdoor
+      show_state: true
+      state_color: true
+      state_header: Patio
+      toggle: true
+      entities:
+        - icon: mdi:weather-sunny
+          name: Patio
+          show_state: true
+          state_color: true
+          tap_action:
+            action: call-service
+            service: scene.turn_on
+            service_data:
+              entity_id: scene.patio_day
+        - icon: mdi:weather-night
+          name: Patio
+          show_state: true
+          state_color: true
+          tap_action:
+            action: call-service
+            service: scene.turn_on
+            service_data:
+              entity_id: scene.patio_night
+        - entity: light.porch
+          name: Porch
+          state_color: true
+          toggle: true
+    - type: custom:multiple-entity-row
+      entity: light.ethan_fan
+      name: Ethan
+      show_state: true
+      state_color: true
+      state_header: Fan
+      toggle: true
+      entities:
+        - icon: mdi:weather-sunny
+          name: Day
+          show_state: true
+          state_color: true
+          tap_action:
+            action: call-service
+            service: scene.turn_on
+            service_data:
+              entity_id: scene.ethan_day
+        - icon: mdi:weather-night
+          name: Night
+          show_state: true
+          state_color: true
+          tap_action:
+            action: call-service
+            service: scene.turn_on
+            service_data:
+              entity_id: scene.ethan_night
+    - type: custom:multiple-entity-row
+      entity: light.maddie_fan
+      name: Maddie
+      show_state: true
+      state_color: true
+      state_header: Fan
+      toggle: true
+      entities:
+        - icon: mdi:weather-sunny
+          name: Day
+          show_state: true
+          state_color: true
+          tap_action:
+            action: call-service
+            service: scene.turn_on
+            service_data:
+              entity_id: scene.maddie_day
+        - icon: mdi:weather-night
+          name: Night
+          show_state: true
+          state_color: true
+          tap_action:
+            action: call-service
+            service: scene.turn_on
+            service_data:
+              entity_id: scene.maddie_night
+        - entity: light.maddie_lamp
+          name: Lamp
+          state_color: true
+          toggle: true
+    - type: custom:multiple-entity-row
+      entity: light.taylor_fan
+      name: Taylor
+      show_state: true
+      state_color: true
+      state_header: Fan
+      toggle: true
+      entities:
+        - icon: mdi:weather-sunny
+          name: Day
+          show_state: true
+          state_color: true
+          tap_action:
+            action: call-service
+            service: scene.turn_on
+            service_data:
+              entity_id: scene.taylor_day
+        - icon: mdi:weather-night
+          name: Night
+          show_state: true
+          state_color: true
+          tap_action:
+            action: call-service
+            service: scene.turn_on
+            service_data:
+              entity_id: scene.taylor_night
+        - entity: light.taylor_closet
+          name: Closet
+          state_color: true
+          toggle: true

@@ -10,15 +10,3 @@ smt_usage_hourly:
   source: sensor.smt_current_reading
   cycle: hourly
   always_available: true
-smt_nodered_usage_monthly:
-  source: sensor.smt_current_reading
-  cycle: monthly
-  always_available: true
-smt_nodered_usage_daily:
-  source: sensor.smt_current_reading
-  cycle: daily
-  always_available: true
-smt_nodered_usage_hourly:
-  source: sensor.smt_current_reading
-  cycle: hourly
-  always_available: true

@@ -1,0 +1,246 @@
+- type: entities
+  entities:
+    - type: custom:multiple-entity-row
+      entity: person.chuck
+      name: Presence
+      icon: mdi:account-group
+      show_state: false
+      entities:
+        - entity: person.chuck
+          icon: mdi:account
+          name: Chuck
+          state_color: true
+        - entity: person.ethan
+          name: Ethan
+          icon: mdi:account
+          state_color: true
+        - entity: person.maddie
+          name: Maddie
+          icon: mdi:account
+          state_color: true
+        - entity: person.morgan
+          name: Morgan
+          icon: mdi:account
+          state_color: true
+        - entity: person.taylor
+          name: Taylor
+          icon: mdi:account
+          state_color: true
+    - type: custom:multiple-entity-row
+      entity: switch.tv
+      name: TV
+      icon: mdi:television-classic
+      show_state: true
+      state_color: true
+      state_header: TV
+      toggle: true
+      entities:
+        - icon: mdi:audio-video
+          name: Receiver
+          state_color: true
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.pioneer_receiver_power_toggle
+        - entity: switch.tv
+          icon: mdi:television-classic
+          name: TV
+          state_color: true
+          toggle: true
+          tap_action:
+            action: call-service
+            service: switch.turn_on
+            service_data:
+              entity_id: switch.tv_power
+          double_tap_action:
+            action: call-service
+            service: switch.turn_off
+            service_data:
+              entity_id: switch.tv_power
+        - entity: switch.salt_rock
+          name: Salt Rock
+          state_color: true
+          toggle: true
+    - type: custom:multiple-entity-row
+      entity: input_boolean.chuck_alarm_enabled
+      name: sleep
+      icon: mdi:sleep
+      show_state: true
+      state_color: true
+      state_header: Alarm
+      toggle: true
+      entities:
+        - icon: mdi:weather-sunset-up
+          name: Wake
+          state_color: true
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.wake
+          double_tap_action:
+            action: call-service
+            service: script.turn_off
+            service_data:
+              entity_id: script.wake
+        - icon: mdi:sleep
+          name: Sleep
+          state_color: true
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.sleep
+          double_tap_action:
+            action: call-service
+            service: script.turn_off
+            service_data:
+              entity_id: script.sleep
+        - entity: input_boolean.enable_motion_detection
+          name: Motion
+          toggle: true
+          state_color: true
+    - type: custom:multiple-entity-row
+      entity: switch.dell_monitor
+      name: AV
+      icon: mdi:monitor
+      show_state: true
+      state_color: true
+      state_header: Dell
+      toggle: true
+      entities:
+        - entity: switch.speakers
+          name: Speakers
+          state_color: true
+          toggle: true
+        - entity: switch.printer
+          name: Printer
+          state_color: true
+          toggle: true
+        - icon: mdi:power
+          name: Samsung
+          state_color: true
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.samsung_monitor_power_toggle
+    - type: custom:multiple-entity-row
+      entity: light.chuck_bedroom
+      name: Bedroom
+      show_state: true
+      state_color: true
+      toggle: true
+      entities:
+        - icon: mdi:weather-sunny
+          name: Day
+          show_state: true
+          state_color: true
+          tap_action:
+            action: call-service
+            service: scene.turn_on
+            service_data:
+              entity_id: scene.chuck_bedroom_day
+        - icon: mdi:weather-sunset-down
+          name: Evening
+          show_state: true
+          state_color: true
+          tap_action:
+            action: call-service
+            service: scene.turn_on
+            service_data:
+              entity_id: scene.chuck_bedroom_evening
+        - icon: mdi:weather-night
+          name: Night
+          show_state: true
+          state_color: true
+          tap_action:
+            action: call-service
+            service: scene.turn_on
+            service_data:
+              entity_id: scene.chuck_bedroom_night
+    - type: custom:multiple-entity-row
+      entity: light.chuck_fan
+      name: Fan
+      show_state: true
+      state_color: true
+      toggle: true
+      entities:
+        - icon: mdi:weather-sunny
+          name: Day
+          show_state: true
+          state_color: true
+          tap_action:
+            action: call-service
+            service: scene.turn_on
+            service_data:
+              entity_id: scene.chuck_fan_day
+        - icon: mdi:weather-sunny
+          name: Night
+          show_state: true
+          state_color: true
+          tap_action:
+            action: call-service
+            service: scene.turn_on
+            service_data:
+              entity_id: scene.chuck_fan_night
+    - type: custom:multiple-entity-row
+      entity: light.chuck_bathroom
+      name: Vanity
+      show_state: true
+      state_color: true
+      toggle: true
+      entities:
+        - icon: mdi:weather-sunny
+          name: Day
+          show_state: true
+          state_color: true
+          tap_action:
+            action: call-service
+            service: scene.turn_on
+            service_data:
+              entity_id: scene.chuck_bathroom_day
+        - icon: mdi:weather-night
+          name: Night
+          show_state: true
+          state_color: true
+          tap_action:
+            action: call-service
+            service: scene.turn_on
+            service_data:
+              entity_id: scene.chuck_bathroom_night
+    - type: custom:multiple-entity-row
+      entity: light.chuck_shower
+      name: Bathroom
+      show_state: true
+      state_color: true
+      toggle: true
+      state_header: Shower
+      entities:
+        - entity: light.chuck_closet
+          name: Closet
+          state_color: true
+          toggle: true
+    - entity: input_datetime.chuck_alarm_time
+      name: Alarm
+    - entity: input_number.sleep_slider
+      name: Sleep
+    - entity: input_select.light_effect
+    - type: custom:multiple-entity-row
+      entity: switch.wyze_plug_outdoor
+      name: Garage
+      icon: mdi:power
+      show_state: true
+      state_color: true
+      state_header: Outdoor
+      toggle: true
+      entities:
+        - entity: switch.outdoor_plug_1
+          name: Plug1
+          state_color: true
+          toggle: true
+        - entity: switch.outdoor_plug_2
+          name: Plug2
+          state_color: true
+          toggle: true

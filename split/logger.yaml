@@ -1,5 +1,5 @@
 default: error
-#logs:
+logs:
   #----------------------------------
   # Home Assistant Core Integrations
   #----------------------------------
@@ -13,7 +13,7 @@ default: error
   # homeassistant.components.scene: debug
   # homeassistant.components.sensor: debug
   # homeassistant.components.upnp: debug
-  # homeassistant.components.smart_meter_texas: debug
+  homeassistant.components.smart_meter_texas: debug
 
   #------------------------
   # Home Assistant Helpers
@@ -25,5 +25,6 @@ default: error
   # HACS Integrations
   #-------------------
   # custom_components.nodered: debug
+  custom_components.tplink-router: debug
   # custom_components.wyzeapi: debug
   # wyzeapy: debug

@@ -6,13 +6,6 @@ sensor:
       {% elif states('sensor.smt_usage_monthly')|float(0) < 2000 and states('sensor.smt_usage_monthly')|float(0) > 500 %} 0.151
       {% elif states('sensor.smt_usage_monthly')|float(0) <= 500 %} 0.155
       {% endif %}
-  - name: Energy Price Node-RED
-    unit_of_measurement: "USD/kWh"
-    state: >-
-      {% if states('sensor.smt_nodered_usage_monthly')|float(0) >= 2000 %} 0.149
-      {% elif states('sensor.smt_nodered_usage_monthly')|float(0) < 2000 and states('sensor.smt_nodered_usage_monthly')|float(0) > 500 %} 0.151
-      {% elif states('sensor.smt_nodered_usage_monthly')|float(0) <= 500 %} 0.155
-      {% endif %}
   - name: Energy Cost Monthly
     device_class: monetary
     state: "{{ states('sensor.smt_usage_monthly') | float(0) * states('sensor.energy_price') | float(0) | round(2, default=0) }}"
@@ -22,15 +15,6 @@ sensor:
   - name: Energy Cost Hourly
     device_class: monetary
     state: "{{ states('sensor.smt_usage_hourly') | float(0) * states('sensor.energy_price') | float(0) | round(2, default=0) }}"
-  - name: Energy Cost Monthly NodeRED
-    device_class: monetary
-    state: "{{ states('sensor.smt_nodered_usage_monthly') | float(0) * states('sensor.energy_price_node_red') | float(0) | round(2, default=0) }}"
-  - name: Energy Cost Daily NodeRED
-    device_class: monetary
-    state: "{{ states('sensor.smt_nodered_usage_daily') | float(0) * states('sensor.energy_price_node_red') | float(0) | round(2, default=0) }}"
-  - name: Energy Cost Hourly NodeRED
-    device_class: monetary
-    state: "{{ states('sensor.smt_nodered_usage_hourly') | float(0) * states('sensor.energy_price_node_red') | float(0) | round(2, default=0) }}"
   - name: "Chuck Vanity Last Movement"
     state: "{{ states('input_datetime.chuck_vanity_last_movement') }}"
   - name: "Chuck Closet Last Movement"

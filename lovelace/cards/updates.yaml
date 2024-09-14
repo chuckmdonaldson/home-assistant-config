@@ -1,0 +1,10 @@
+- type: custom:auto-entities
+  card: 
+    type: entities
+    title: Updates
+  filter:
+    include: 
+      - domain: update
+    exclude:
+      - state: "off"
+  show_empty: false
