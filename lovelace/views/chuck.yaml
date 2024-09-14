@@ -7,29 +7,21 @@ theme: dark-mode
 visible:
   - user: 3e317e6bc2a24cb8b227925691c5c820
 sections:
-
-  # Secion #1
   - type: grid
     cards:
-      - !include lovelace/cards/bedroom.yaml
-
-  # Section #2
+      - !include cards/bedroom.yaml
   - type: grid
     cards:
-      - !include lovelace/cards/lights.yaml
-      - !include lovelace/cards/media_players.yaml
-      - !include lovelace/cards/updates.yaml
-
-  # Section #3
+      - !include cards/lights.yaml
+      - !include cards/media_players.yaml
+      - !include cards/updates.yaml
   - type: grid
     cards:
-      - !include lovelace/cards/motion.yaml
-      - !include lovelace/cards/temperature.yanl
-      - !include lovelace/cards/weather.yanl
-      - !include lovelace/cards/energy.yaml
-
-  # Section #4
+      - !include cards/motion.yaml
+      - !include cards/temperature.yaml
+      - !include cards/weather.yaml
+      - !include cards/energy.yaml
   - type: grid
     cards:
-      - !include lovelace/cards/router.yaml
-      - !include lovelace/cards/gauges.yaml
+      - !include cards/router.yaml
+      - !include cards/gauges.yaml

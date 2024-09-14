@@ -1,0 +1,91 @@
+type: vertical-stack
+cards:
+  - type: horizontal-stack
+    cards:
+      - type: tile
+        entity: sensor.router_wan_status
+        name: Internet
+        icon: mdi:web
+      - type: tile
+        entity: sensor.router_uptime_relative
+        name: Uptime
+        icon: mdi:sort-clock-descending
+      - type: tile
+        entity: sensor.router_external_ip
+        name: IP Address
+        icon: mdi:ip
+  - type: horizontal-stack
+    cards:
+      - type: custom:mini-graph-card
+        icon: mdi:download-network
+        name: Download
+        decimals: 1
+        font_size: 80
+        unit: kb/s
+        line_color: "#8b00ff"
+        entities:
+          - entity: sensor.router_kib_s_received
+            show_state: true
+            state_adaptive_color: true
+      - type: custom:mini-graph-card
+        icon: mdi:upload-network
+        name: Upload
+        decimals: 1
+        font_size: 80
+        unit: kb/s
+        line_color: "#8b00ff"
+        entities:
+          - entity: sensor.router_kib_s_sent
+            show_state: true
+            state_adaptive_color: true
+  - type: grid
+    columns: 3
+    cards:
+      - type: custom:mini-graph-card
+        icon: mdi:download-network
+        name: Down
+        decimals: 1
+        font_size: 70
+        unit: mb/s
+        color_thresholds:
+          - value: 100
+            color: "#ff0000"
+          - color: "#8b00ff"
+          - value: 200
+            color: "#0000FF"
+        entities:
+          - entity: sensor.speedtest_download
+            show_state: true
+            state_adaptive_color: true
+      - type: custom:mini-graph-card
+        icon: mdi:upload-network
+        name: Up
+        decimals: 1
+        font_size: 70
+        unit: mb/s
+        color_thresholds:
+          - value: 10
+            color: "#0000FF"
+          - color: "#8b00ff"
+          - value: 40
+            color: "#ff0000"
+        entities:
+          - entity: sensor.speedtest_upload
+            show_state: true
+            state_adaptive_color: true
+      - type: custom:mini-graph-card
+        icon: mdi:check-network
+        name: Ping
+        decimals: 0
+        font_size: 70
+        unit: ms
+        color_thresholds:
+          - value: 10
+            color: "#0000FF"
+          - color: "#8b00ff"
+          - value: 40
+            color: "#ff0000"
+        entities:
+          - entity: sensor.speedtest_ping
+            show_state: true
+            state_adaptive_color: true

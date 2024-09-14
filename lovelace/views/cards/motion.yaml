@@ -1,0 +1,14 @@
+type: horizontal-stack
+cards:
+  - type: tile
+    entity: sensor.chuck_closet_last_movement
+    name: Closet
+    icon: mdi:motion-sensor
+  - type: tile
+    entity: sensor.chuck_shower_last_movement
+    name: Shower
+    icon: mdi:motion-sensor
+  - type: tile
+    entity: sensor.chuck_vanity_last_movement
+    name: Vanity
+    icon: mdi:motion-sensor

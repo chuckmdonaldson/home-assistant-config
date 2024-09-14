@@ -1,0 +1,10 @@
+type: vertical-stack
+cards:
+  - type: custom:mini-media-player
+    entity: media_player.apple_tv_4g
+  - type: custom:mini-media-player
+    entity: media_player.philips_tv
+  - type: custom:mini-media-player
+    entity: media_player.chuck_echo_bathroom
+  - type: custom:mini-media-player
+    entity: media_player.chuck_echo

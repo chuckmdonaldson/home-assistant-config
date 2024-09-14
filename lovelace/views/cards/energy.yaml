@@ -1,0 +1,36 @@
+type: entities
+entities:
+  - type: custom:multiple-entity-row
+    entity: sensor.smt_usage_hourly
+    name: Usage (kWh)
+    icon: mdi:home-lightning-bolt
+    show_state: true
+    state_header: Hourly
+    format: precision2
+    unit: false
+    entities:
+      - entity: sensor.smt_usage_daily
+        name: Daily
+        format: precision2
+        unit: false
+      - entity: sensor.smt_usage_monthly
+        name: Monthly
+        format: precision2
+        unit: false
+  - type: custom:multiple-entity-row
+    entity: sensor.energy_cost_hourly
+    name: Cost
+    icon: mdi:currency-usd
+    show_state: true
+    state_header: Hourly
+    format: precision2
+    unit: false
+    entities:
+      - entity: sensor.energy_cost_daily
+        name: Daily
+        format: precision2
+        unit: false
+      - entity: sensor.energy_cost_monthly
+        name: Monthly
+        format: precision2
+        unit: false
